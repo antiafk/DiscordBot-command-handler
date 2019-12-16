@@ -5,7 +5,7 @@ local command = {
 	description = "Description of command"
 }
 
-command.messageCreate = function(client, message, args)
+command.messageCreate = function(client, message, args, modules)
 	-- Whats happens when the command is called
 end
 
