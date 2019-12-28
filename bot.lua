@@ -3,23 +3,8 @@ local client = discordia.Client()
 discordia.extensions()
 
 local ownerId
-local fs = require('fs') -- fs.readFileSync, fs.writeFileSync
-
+local fs = require('fs')
 local prefix = "b."
-
---[[
-				Functions
-########################################
-
-]]
-
-function table.getTableLength(t)
-	local count = 0
-	for k in next, t do
-		count = count + 1
-	end
-	return count
-end
 
 --[[
 				Modules
@@ -61,6 +46,7 @@ end
 
 client:on('ready', function()
 	print("\nLogged in as " .. client.user.tag)
+	print("Running with " .. #modules.commands .. " commands")
 	client:setGame("Running")
 	ownerId = client.owner.id
 end)
