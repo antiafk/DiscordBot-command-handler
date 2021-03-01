@@ -6,6 +6,14 @@ local ownerId
 local fs = require('fs')
 local prefix = "b."
 
+table.getLen = function(t)
+	local c = 0
+	for k, v in next, t do
+		c = c + 1
+	end
+	return c
+end
+
 --[[
 				Modules
 ########################################
@@ -46,7 +54,7 @@ end
 
 client:on('ready', function()
 	print("\nLogged in as " .. client.user.tag)
-	print("Running with " .. #modules.commands .. " commands")
+	print("Running with " .. table.getLen(modules.commands) .. " commands")
 	client:setGame("Running")
 	ownerId = client.owner.id
 end)
